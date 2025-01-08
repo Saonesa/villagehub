@@ -10,13 +10,21 @@
         "filament/filament": "^3.2",
         "filament/forms": "^3.2",
         "filament/tables": "^3.2",
+<<<<<<< Updated upstream
         "laravel/framework": "^11.31",
+=======
+        "laravel/framework": "^11.9",
+>>>>>>> Stashed changes
         "laravel/tinker": "^2.9",
         "stephenjude/filament-blog": "^3.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
+<<<<<<< Updated upstream
         "laravel/breeze": "^2.2",
+=======
+        "laravel/breeze": "^2.3",
+>>>>>>> Stashed changes
         "laravel/pail": "^1.1",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
@@ -69,6 +77,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
