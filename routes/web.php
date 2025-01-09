@@ -22,3 +22,4 @@ Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
 require __DIR__.'/auth.php';
+Route::get('/', [BlogController::class, 'index'])->name('welcome');
