@@ -11,6 +11,8 @@ class BlogController extends Controller
     {
         // Mengambil semua postingan yang sudah dipublikasikan
         $posts = Post::published()->get();
+
+        // Pastikan variabel $posts dikirimkan ke view
         return view('blog.index', compact('posts'));
     }
 

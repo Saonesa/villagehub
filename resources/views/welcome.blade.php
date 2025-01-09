@@ -221,38 +221,18 @@
 </section>
 
 <!-- Berita -->
-<section id="berita" class="py-12">
-    <div class="container mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-8">Berita Terbaru</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Card Berita 1 -->
-            <div class="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl hover:scale-105 transition-transform duration-300">
-                <img src="https://www.wartapilihan.com/wp-content/uploads/2017/08/sedang_1494200925x-2.jpg" alt="Berita 1" class="w-full h-48 object-cover rounded-lg">
-                <h3 class="text-xl font-semibold text-green-600 mt-4">Berita 1</h3>
-                <p class="mt-2 text-gray-600">Deskripsi singkat tentang berita terbaru desa mengenai kegiatan sosial masyarakat.</p>
+<section id="berita" class="py-12 bg-gray-100">
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-6">Berita Terbaru</h1>
+
+        <!-- Tampilkan semua postingan -->
+        @foreach($posts as $post)
+            <div class="mb-6 p-6 bg-white shadow-lg rounded-lg">
+                <h2 class="text-2xl font-semibold">{{ $post->title }}</h2>
+                <p class="text-gray-600 mt-2">{{ Str::limit($post->content, 150) }}</p>
+                <a href="{{ route('posts.show', $post->id) }}" class="text-green-600 hover:text-green-500 mt-2 inline-block">Baca Selengkapnya</a>
             </div>
-            <!-- Card Berita 2 -->
-            <div class="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl hover:scale-105 transition-transform duration-300">
-                <img src="https://www.masterplandesa.com/wp-content/uploads/2021/03/Departemen-Pekerjaan-Umum-Pedoman-Teknis-Program-Pembangunan-Infrastruktur-Perdesaan.-2008.jpg" 
-                     alt="Berita 2" class="w-full h-48 object-cover rounded-lg">
-                <h3 class="text-xl font-semibold text-green-600 mt-4">Berita 2</h3>
-                <p class="mt-2 text-gray-600">Pembangunan infrastruktur desa yang sedang berlangsung, termasuk jalan dan jembatan.</p>
-            </div>
-            <!-- Card Berita 3 -->
-            <div class="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl hover:scale-105 transition-transform duration-300">
-                <img src="https://blkbojonegoro.com/wp-content/uploads/2022/11/Tingkatkan-Kualitas-SDM-Warga-UPT-BLK-Bojonegoro-Gelar-Pelatihan-Di-Desa-Sumodikaran-1.jpg" 
-                     alt="Berita 3" class="w-full h-48 object-cover rounded-lg">
-                <h3 class="text-xl font-semibold text-green-600 mt-4">Berita 3</h3>
-                <p class="mt-2 text-gray-600">Kegiatan pelatihan keterampilan bagi warga desa untuk meningkatkan ekonomi lokal.</p>
-            </div>
-            <!-- Card Berita 4 -->
-            <div class="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl hover:scale-105 transition-transform duration-300">
-                <img src="https://i.ytimg.com/vi/VsAAK56XNvM/maxresdefault.jpg" 
-                     alt="Berita 4" class="w-full h-48 object-cover rounded-lg">
-                <h3 class="text-xl font-semibold text-green-600 mt-4">Berita 4</h3>
-                <p class="mt-2 text-gray-600">Upacara budaya yang diselenggarakan untuk melestarikan tradisi desa Sangiang.</p>
-            </div>
-        </div>
+        @endforeach
     </div>
 </section>
 
